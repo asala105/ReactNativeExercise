@@ -45,7 +45,6 @@ export default function App() {
     filterEvents(newDateFormat);
   };
   function filterEvents (date){
-    
     fakeData.forEach((data)=>{
       if(data.date == date){
         console.log('getting events')
