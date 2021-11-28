@@ -33,7 +33,10 @@ export default function AvailableTimes(props) {
       <Animated.FlatList
       ref={_flat_list1}
         data={props.times}
-        contentContainerStyle={{ alignItems: 'center', justifyContent: 'center',
+        contentContainerStyle={{ 
+          paddingTop:0,
+          alignItems: 'center',
+          justifyContent: 'center',
         paddingHorizontal: 20}}
         renderItem={({ item, index, separators }) => (
           <Time
@@ -72,9 +75,12 @@ export default function AvailableTimes(props) {
           top: 0,
         }}
         data={props.times}
-        contentContainerStyle={{ alignItems: 'center', justifyContent: 'center',
-        paddingTop: 0,
-        paddingBottom: 0,
+        contentContainerStyle={{
+          paddingTop:0,
+          alignItems: 'center',
+          justifyContent: 'center',
+          paddingBottom: 0,
+          paddingHorizontal:20
       }}
         renderItem={({ item, index, separators }) => (
           <Time
@@ -97,8 +103,7 @@ export default function AvailableTimes(props) {
 }
 
 const styles = StyleSheet.create({
-  // list:{
-  //   position: 'relative',
-  //   maxWidth: Dimensions.get('window').width,
-  // }
+  list:{
+    maxHeight: 4*ITEM_HEIGHT,
+  }
 });
