@@ -37,7 +37,8 @@ export default function AvailableTimes(props) {
           paddingTop:0,
           alignItems: 'center',
           justifyContent: 'center',
-        paddingHorizontal: 20}}
+        paddingHorizontal: 20,
+      paddingBottom:3*ITEM_HEIGHT}}
         renderItem={({ item, index, separators }) => (
           <Time
               time={item}
