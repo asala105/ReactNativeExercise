@@ -17,7 +17,7 @@ export default function Time(props) {
     <TouchableOpacity
         style={[styles.container,props.isActive ? styles.containerActive : {}]}
         // onLayout={onLayout}
-        onPress={onPress}
+        // onPress={onPress}
     >
         <Text style={[styles.text,styles.day,props.isActive ? styles.textActive : {}]}>{props.time.from + '-' + props.time.till}</Text>
     </TouchableOpacity>
@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
       borderBottomWidth: 2,
       paddingHorizontal: 15,
       paddingVertical: 10,
-      height: '20%',
     },
     date: {
       fontSize: 12,

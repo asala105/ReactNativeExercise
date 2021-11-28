@@ -59,9 +59,7 @@ export default function App() {
       <View style={{ flex: 10}}>
         <Instructions />
         <MyDatePicker onSelectDate={onSelectDate} showDaysBeforeCurrent={0} showDaysAfterCurrent={30} />
-        <View style={{ flex:5, backgroundColor:'#252e5e' }}>
           <MyTimePicker timeSlots = {timeSlots}/>
-        </View>
         <NextButton />
       </View>
       <StatusBar style="auto" />

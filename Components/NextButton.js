@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',
+      margin: 10
      
     },
     btn: {

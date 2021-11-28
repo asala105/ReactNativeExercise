@@ -35,10 +35,7 @@ export default function Dates(props) {
           const slideSize = event.nativeEvent.layoutMeasurement.width;
           const index = event.nativeEvent.contentOffset.x / slideSize;
           const roundIndex = Math.round(index);
-          if(_flat_list.current.value !== roundIndex){
-            console.log('onItemIndexChange');
-            onItemIndexChange(roundIndex);
-          }
+            props.onItemIndexChange(roundIndex);
         }}
       />
     )
@@ -46,6 +43,6 @@ export default function Dates(props) {
 
 const styles = StyleSheet.create({
   list:{
-    maxWidth: Dimensions.get('window').width,
+    width: Dimensions.get('window').width,
   }
 });

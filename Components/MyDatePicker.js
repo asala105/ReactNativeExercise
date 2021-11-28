@@ -23,7 +23,7 @@ export default function MyDatePicker(props) {
     props.onSelectDate(dates[index]);
   };
 
-  const onItemIndexChange = useCallback(setCurrentDateIndex,[]);
+  const onItemIndexChange = useCallback(onSelectDay,[]);
   function onRenderDay (index, width){
     // Check whether all date have been rendered already
     const allDatesHaveRendered = dayWidths
@@ -39,7 +39,6 @@ export default function MyDatePicker(props) {
     if (!allDatesHaveRendered || currentDateIndex === undefined || currentDateIndex === null) {
       return;
     }
-    console.log("scroll failed");
     // Put all day width values into a simple array $FlowFixMe
     const dayWidthsArray = Object.values(dayWidths);
     // Total width all days take
@@ -96,7 +95,7 @@ export default function MyDatePicker(props) {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 2,
     alignItems: 'center',
     justifyContent: 'center',
   },
