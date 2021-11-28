@@ -8,13 +8,11 @@ export default function AvailableTimes(props) {
   const _flat_list1 = useRef();
   const _flat_list2 = useRef();
   const [layout, setLayout] = useState({width:0, height:0});
-  const [index, setIndex] = React.useState(0);
   const scrollY = React.useRef(new Animated.Value(0)).current;
   const onScroll = Animated.event(
     [{ nativeEvent: { contentOffset: { y: scrollY } } }],
     { useNativeDriver: true }
   );
-  const onItemIndexChange = React.useCallback(setIndex, []);
   React.useEffect(() => {
     scrollY.addListener((v) => {
       if (_flat_list2?.current) {
@@ -37,8 +35,8 @@ export default function AvailableTimes(props) {
           paddingTop:0,
           alignItems: 'center',
           justifyContent: 'center',
-        paddingHorizontal: 20,
-      paddingBottom:3*ITEM_HEIGHT}}
+          paddingHorizontal: 20,
+          paddingBottom:3*ITEM_HEIGHT}}
         renderItem={({ item, index, separators }) => (
           <Time
               time={item}
@@ -61,9 +59,7 @@ export default function AvailableTimes(props) {
           const newIndex = Math.round(
             ev.nativeEvent.contentOffset.y / ITEM_HEIGHT
           );
-          if (onItemIndexChange) {
             onItemIndexChange(newIndex);
-          }
         }}
       />
       <Animated.FlatList
