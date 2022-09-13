@@ -11,7 +11,7 @@ export default function Instructions() {
 }
 const styles = StyleSheet.create({
     container: {
-      flex: 4,
+      flex: 3,
       alignItems: 'center',
       justifyContent: 'center',
       textAlign: 'center',

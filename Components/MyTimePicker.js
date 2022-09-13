@@ -11,13 +11,11 @@ export default function MyTimePicker(props) {
   function onSelectTime (index){
     setCurrentTimeIndex(index);
     // props.onSelectDate(dates[index]);
+    console.log('time selected');
   };
 
-  const onItemIndexChange = useCallback(setCurrentTimeIndex,[]);
-  const onScroll = useCallback((event) => {
-    let yPos = event.nativeEvent.contentOffset.y;
-    setScrollPositionY(yPos);
-  }, []);
+  const onItemIndexChange = useCallback(onSelectTime
+    ,[]);
   function scrollToCurrentTime (){
     if (currentTimeIndex === undefined || currentTimeIndex === null) {
       return;
@@ -68,15 +66,15 @@ export default function MyTimePicker(props) {
       times={props.timeSlots}
       currentTimeIndex={currentTimeIndex}
       onSelectTime={onSelectTime}
-      onScroll={onScroll}
       onItemIndexChange={onItemIndexChange}
     />
   )
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 5,
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical:10
   },
 });
